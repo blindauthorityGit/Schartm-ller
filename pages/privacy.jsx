@@ -19,9 +19,9 @@ export default function About({ dataStart }) {
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 px-6 sm:px-0 md:col-span-6 sm:pt-4">
-                {" "}
-                <p>Datenschutzerklärung</p>
+            <div className="col-span-12 px-6 sm:px-0 md:col-span-6 sm:pt-4 texte">
+                <PortableText className="texte" value={dataStart.description}></PortableText>{" "}
+                {/* <p>Datenschutzerklärung</p>
                 <div className="texte sm:mt-8 sm:px-12 md:px-0">
                     <p></p>
 
@@ -817,14 +817,14 @@ export default function About({ dataStart }) {
                         <a href="https://www.adsimple.at/datenschutz-generator/">Datenschutz Generator</a>&nbsp;von
                         AdSimple
                     </p>
-                </div>
+                </div> */}
             </div>
         </MainContainer>
     );
 }
 
 export const getStaticProps = async (context) => {
-    const resStart = await client.fetch(`*[_type in ["about"]]`);
+    const resStart = await client.fetch(`*[_type in ["datenschutz"]]`);
     const dataStart = await resStart[0];
 
     return {

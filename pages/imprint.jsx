@@ -19,8 +19,9 @@ export default function About({ dataStart }) {
                 <title>Eva Maria Schartmüller</title>
             </Head>
 
-            <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 ">
-                <p>Impressum</p>
+            <div className="col-span-12 px-6 sm:px-0 sm:pt-4 md:col-span-6 texte">
+                <PortableText className="texte" value={dataStart.description}></PortableText>
+                {/* <p>Impressum</p>
                 <div className="texte mt-8 sm:px-12 md:px-0">
                     <p>
                         Informationspflicht laut §5 E-Commerce Gesetz, §14 Unternehmensgesetzbuch, §63 Gewerbeordnung
@@ -81,14 +82,14 @@ export default function About({ dataStart }) {
                         <br />
                         Eva Maria Schartmüller
                     </p>
-                </div>
+                </div> */}
             </div>
         </MainContainer>
     );
 }
 
 export const getStaticProps = async (context) => {
-    const resStart = await client.fetch(`*[_type in ["about"]]`);
+    const resStart = await client.fetch(`*[_type in ["impressum"]]`);
     const dataStart = await resStart[0];
 
     return {

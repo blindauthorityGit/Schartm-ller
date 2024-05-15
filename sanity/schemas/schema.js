@@ -9,6 +9,8 @@ import work from "./components/work";
 import images from "./components/images";
 import about from "./components/about";
 import kontakt from "./components/kontakt";
+import impressum from "./components/imprint";
+import datenschutz from "./components/datenschutz";
 import links from "./components/links";
 import video from "./components/objects/video";
 
@@ -27,6 +29,8 @@ export default createSchema({
         kontakt,
         links,
         video,
+        impressum,
+        datenschutz,
         /* Your types here! */
     ]),
 });
