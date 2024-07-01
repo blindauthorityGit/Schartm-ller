@@ -293,25 +293,9 @@ const Work = ({ post, dataAll }) => {
 
 export default Work;
 
-export const getStaticPaths = async () => {
-    const res = await client.fetch(`*[_type in ["work"] ]`);
-    const data = await res;
-
-    const paths = data.map((e) => {
-        return {
-            params: { slug: e.slug.current },
-        };
-    });
-    return {
-        paths,
-        fallback: true,
-    };
-};
-
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const slug = context.params.slug;
-    const res = await client.fetch(`*[_type == "work" && slug.current == "${slug}"] 
-    `);
+    const res = await client.fetch(`*[_type == "work" && slug.current == "${slug}"]`);
     const data = await res;
 
     const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
@@ -322,6 +306,5 @@ export const getStaticProps = async (context) => {
             post: data[0],
             dataAll,
         },
-        revalidate: 10,
     };
 };
