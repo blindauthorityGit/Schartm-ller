@@ -99,8 +99,8 @@ const Work = ({ post, dataAll }) => {
         console.log(post, dataAll, post.seo, imgRefs);
         if (imgRefs.current.length > 0) {
             setVideoDimensions({
-                width: imgRefs.current[0].clientWidth,
-                height: imgRefs.current[0].clientHeight,
+                width: imgRefs?.current[0]?.clientWidth,
+                height: imgRefs?.current[0]?.clientHeight,
             });
         }
     }, [dataAll, post]);
@@ -300,7 +300,6 @@ export const getServerSideProps = async (context) => {
 
     const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
     const dataAll = await resAll;
-
     return {
         props: {
             post: data[0],
