@@ -62,7 +62,19 @@ const Works = ({ dataAll }) => {
 
 export default Works;
 
-export const getStaticProps = async (context) => {
+// export const getStaticProps = async (context) => {
+//     const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
+//     const dataAll = await resAll;
+
+//     return {
+//         props: {
+//             dataAll,
+//         },
+//         revalidate: 10, // 10 seconds
+//     };
+// };
+
+export const getServerSideProps = async () => {
     const resAll = await client.fetch(`*[_type == "work"] | order(order asc)`);
     const dataAll = await resAll;
 
@@ -70,6 +82,5 @@ export const getStaticProps = async (context) => {
         props: {
             dataAll,
         },
-        revalidate: 10, // 10 seconds
     };
 };
