@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CgClose } from "react-icons/cg";
+import { CgClose } from "react-icons/cg/index.js";
 
 const NavModal = (props) => {
     const [aniEnd, setAniEnd] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi/index.js";
 import NavModal from "./navModal";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa/index.js";
 
 const Navbar = (props) => {
     const [modalOpen, setModalOpen] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
-import { RiFacebookFill } from "react-icons/ri";
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa/index.js";
+import { RiFacebookFill } from "react-icons/ri/index.js";
 
 const Footer = (props) => {
     const footerRef = useRef(null);

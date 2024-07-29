@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { GiHamburgerMenu } from "react-icons/gi";
+// import { GiHamburgerMenu } from "react-icons/gi";
 import NavModal from "./navModal";
-import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi";
+import { HiOutlineChevronRight, HiOutlineChevronLeft } from "react-icons/hi/index.js";
 
 const WorksNav = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
