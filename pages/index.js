@@ -22,8 +22,8 @@ export default function Home({ dataStart, dataNews }) {
     const imageProps = useNextSanityImage(client, dataStart.mainImage);
 
     useEffect(() => {
-        console.log(dataNews);
-    }, []);
+        console.log(dataNews, dataStart);
+    }, [dataNews, dataStart]);
 
     return (
         <MainContainer width="w-full col-span-12 md:col-span-9 md:pl-12 md:ml-[314px] sm:pt-[69px] overflow-hidden">
