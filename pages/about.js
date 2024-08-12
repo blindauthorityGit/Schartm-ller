@@ -9,9 +9,9 @@ import { H1, H2, H3 } from "../components/utils/headlines";
 import { PortableText } from "@portabletext/react";
 
 export default function About({ dataStart }) {
-    // useEffect(() => {
-    //     console.log(dataStart, dataNews);
-    // }, []);
+    useEffect(() => {
+        console.log(dataStart);
+    }, []);
 
     return (
         <MainContainer width="w-full px-6 sm:px- sm:pl-12 col-span-12 md:col-span-9 md:ml-[320px] overflow-hidden">
@@ -36,6 +36,6 @@ export const getStaticProps = async (context) => {
         props: {
             dataStart,
         },
-        revalidate: 1, // 10 seconds
+        revalidate: 10, // 10 seconds
     };
 };
