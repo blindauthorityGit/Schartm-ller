@@ -24,7 +24,7 @@ export default function Link({ dataStart }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const resStart = await client.fetch(`*[_type in ["links"]]`);
     const dataStart = await resStart[0];
 
@@ -32,6 +32,6 @@ export const getStaticProps = async (context) => {
         props: {
             dataStart,
         },
-        revalidate: 1, // 10 seconds
+        // revalidate: 1, // 10 seconds
     };
 };

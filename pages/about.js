@@ -28,7 +28,7 @@ export default function About({ dataStart }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const resStart = await client.fetch(`*[_type in ["about"]]`);
     const dataStart = await resStart[0];
 
@@ -36,6 +36,6 @@ export const getStaticProps = async (context) => {
         props: {
             dataStart,
         },
-        revalidate: 10, // 10 seconds
+        // revalidate: 10, // 10 seconds
     };
 };
