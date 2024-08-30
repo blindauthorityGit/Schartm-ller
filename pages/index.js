@@ -68,7 +68,7 @@ export default function Home({ dataStart, dataNews }) {
     );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
     const resStart = await client.fetch(`*[_type in ["home"]]`);
     const dataStart = await resStart[0];
 
@@ -80,6 +80,6 @@ export const getStaticProps = async (context) => {
             dataStart,
             dataNews,
         },
-        revalidate: 1, // 10 seconds
+        // revalidate: 1, // 10 seconds
     };
 };
