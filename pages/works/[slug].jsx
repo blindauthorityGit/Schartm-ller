@@ -145,8 +145,7 @@ const Work = ({ post, dataAll }) => {
                                 </div>
                             </div>
                             {post.topLine ? (
-                                <div className="topLineText  px-6 sm:px-0">
-                                    {" "}
+                                <div className="topLineText order-first px-6 sm:px-0">
                                     <PortableText value={post.topLine}></PortableText>
                                 </div>
                             ) : null}
