@@ -27,9 +27,9 @@ const Footer = (props) => {
                         <a className="mr-4" href={props.insta}>
                             <FaInstagram></FaInstagram>
                         </a>
-                        <a className="mr-4" href={props.twitter}>
+                        {/* <a className="mr-4" href={props.twitter}>
                             <FaTwitter></FaTwitter>
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>
